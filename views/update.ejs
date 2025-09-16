@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/css/main.css">
   <title>Todo List</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -107,42 +108,15 @@
 <body>
   <div class="container">
     <h1><span class="todo">Todo</span> <span class="list">List</span></h1>
-    <form class="formadd" action="/add" method="POST">
+    <form class="formadd" action="/update/<%=index%>" method="POST">
       <div class="addnew">
-        <input type="text" name="task" placeholder="Add a new task" required>
+        <input type="text" name="task" value="<%=task.task%>" required>
         <button class="addbutton" type="submit">
-          Add
+          Update
         </button>
     </form>
   </div>
-
-  <ul>
-    <% for(let i=taskList.length - 1; i>= 0; i--) { %>
-      <li>
-        <%= taskList[i].task %>
-          <div>
-            <form action="/edit/<%= i %>" method="POST" style="display:inline;">
-              <button class="alldeletebutton" type="submit">Edit</button>
-            </form>
-            <form action="/delete/<%= i %>" method="POST" style="display:inline;">
-              <button class="deletebutton" type="submit">Delete</button>
-            </form>
-          </div>
-      </li>
-
-      <% } %>
-  </ul>
-  <% if(taskList.length>0) { %>
-    <div style="display: flex; justify-content: space-between; align-items: center; margin: 10px 7px 0px;">
-      <span style="font-size: 12px; color: gray;">
-        You have <%= taskList.length %> add todo
-      </span>
-      <form action="/alldelete" method="POST" style="display:inline;">
-        <button class="alldeletebutton" type="submit">All Clear</button>
-      </form>
-    </div>
-    <% } %>
-      </div>
+  </div>
 </body>
 
 </html>
