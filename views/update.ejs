@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/css/main.css">
-  <title>Todo List</title>
+  <title>Todo Update</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <style>
     body {
@@ -26,24 +26,6 @@
       width: 300px;
     }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-      max-height: 190px;
-      overflow-y: auto;
-    }
-
-    li {
-      background-color: #7d7b7b94;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: 30px;
-      color: white;
-    }
-
     .formadd {
       margin-bottom: 16px;
     }
@@ -57,27 +39,18 @@
       border: 1px solid black;
     }
 
-    .addnew {
+    .update {
       display: flex;
       gap: 10px;
       align-items: center;
     }
 
-    .addbutton {
+    .updatebutton {
       padding: 12px 15px;
       color: white;
       border: none;
       border-radius: 30px;
       background-color: green;
-      cursor: pointer;
-    }
-
-    .deletebutton {
-      padding: 6px 12px;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      background-color: red;
       cursor: pointer;
     }
 
@@ -93,25 +66,16 @@
     .list {
       color: green;
     }
-
-    .alldeletebutton {
-      padding: 6px 12px;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      background-color: red;
-      cursor: pointer;
-    }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1><span class="todo">Todo</span> <span class="list">List</span></h1>
+    <h1><span class="todo">Todo</span> <span class="list">Update</span></h1>
     <form class="formadd" action="/update/<%=index%>" method="POST">
-      <div class="addnew">
+      <div class="update">
         <input type="text" name="task" value="<%=task.task%>" required>
-        <button class="addbutton" type="submit">
+        <button class="updatebutton" type="submit">
           Update
         </button>
     </form>
